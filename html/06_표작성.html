@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>06_표작성.html</title>
+ </head>
+ <body>
+  
+	<!--table.cell.column,row-->
+	<table border="1">
+	<tr><th>cell</th><th>cell</th><th>cell</th></tr>
+	<tr><td>김옥돌</td><td>강옥돌</td><td>나옥돌</td></tr>
+	<tr><td>아침</td><td>점심</td><td>저녁</td></tr>
+	<tr><td>cell</td><td>cell</td><td>cell</td></tr>
+	</table>
+
+
+
+	<!--표 크기-->
+	<table border="1" width="250" height="200">
+	<tr><th>cell</th><th>cell</th><th>cell</th></tr>
+	<tr><td>김옥돌</td><td>강옥돌</td><td>나옥돌</td></tr>
+	<tr><td>아침</td><td>점심</td><td>저녁</td></tr>
+	<tr><td>cell</td><td>cell</td><td>cell</td></tr>
+	</table>
+
+
+	<!--정렬 : 가로 (align), 세로 (valign)-->
+	<table border="1" width="300" height="300">
+	<tr>
+		<td align="left">종로구</td>
+		<td align="center">강남구</td>
+		<td align="right">마포구</td>
+	</tr>
+	<tr>
+		<td valign="top">김옥돌동</td>
+		<td valign="center">나옥돌동</td>
+		<td valign="bottom">다옥돌동</td>
+	</tr>
+	</table>
+
+	<table border="1" width="300" height="300">
+	<tr bgcolor="#ff0099">
+		<td>이름</td>
+		<td>주소</td>
+	</tr>
+	<tr bgcolor="#cc3399">
+		<td align ="center" valign="bottom" >무궁화</td>
+		<td>대한민국</td>
+	</tr>
+	</table>
+
+
+	<!--thead/ tbody/ tfoot-->
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Month</th>
+      <th>Savings</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>January</td>
+      <td>$100</td>
+    </tr>
+    <tr>
+      <td>February</td>
+      <td>$80</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>Sum</td>
+      <td>$180</td>
+    </tr>
+  </tfoot>
+</table>
+
+<p><b>Tip:</b> The thead, tbody, and tfoot elements will not affect the layout of the table by default. However, you can use CSS to style these elements.</p>
+
+
+
+<!--셀합치기 
+	가로 colspan
+	세로 rowspan-->
+
+
+<table border ="1" width="200">
+<tr>
+	<td>가</td>
+	<td>나</td>
+	<td>다</td>
+</tr>
+
+<tr>
+	<td colspan="2">옥돌소녀</td> <!--2칸 합치기 -->
+	<td>마</td>
+</tr>
+
+<tr>
+	<td colspan="3">안녕 별아</td>
+</tr>
+</table>
+
+
+<table border="1" width ="200">
+<tr>
+	<td rowspan="2">룰루</td> <!--2줄 합치기 -->
+	<td>랄라</td>
+	<td>라아</td>
+</tr>
+<tr>
+	<td>하하</td>
+	<td rowspan="2">호호</td><!--2줄 합치기 -->
+	<!-- <td></td> -->
+</tr>
+<tr>
+	<td>네트워크</td>
+	<td>클라우드</td>
+</tr>
+</table>
+
+<table border="1" width="200">
+<tr>
+	<td colspan="2">나</td>
+	<td>이</td>
+	<td>승</td>
+	<td rowspan="2">철</td>
+</tr>
+<tr>
+	<td>넌</td>
+	<td>김</td>
+	<td>옥</td>
+	<td>돌</td>
+
+</tr>
+<tr>
+	<td>나</td>
+	<td colspan="2" rowspan="2">김</td>
+	<td>태</td>
+	<td>우</td>
+</tr>
+<tr>
+	<td>넌</td>
+	<td>옥</td>
+	<td>
+		<!--표 안에 표 작성 -->
+		<table border="1">
+		<tr>
+			<td>돌</td>
+			<td>소녀</td>
+			
+		</tr>
+		</table>
+	
+	</td>
+	
+</tr>
+</table>
+
+ </body>
+</html>

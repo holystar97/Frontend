@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>.9_입력폼.html</title>
+ </head>
+ <body>
+  <!---사용자 입력방식 (폼 컨트롤)-->
+  <!--input 요소들-->
+
+	<input type="button" value="확인">
+	<input type="button" value="검색">
+	<hr>
+	<input type="submit" value="제출">
+	<input type="reset" value="취소">
+	<hr>
+	<button>회원가입</button>
+	<hr>
+
+	* 회원가입 * <br>
+	
+	<!--
+		잘못된 경우
+		<form>
+				<form></form>
+		</form>
+		
+		잘 된경우
+		
+		<form></form>
+		<form></form>
+		<form></form>
+
+	
+		<form>관련된 속성들
+
+
+
+
+	-->
+
+	<form action ="ok.jsp" name="memfrm" id="memfrm" method="get" enctype="multipart/form-data">
+		아이디 : <input type="text">
+		<input type="button" value="ID 중복확인" name="userId" id="userId"> 
+		<hr>
+		비밀번호 : <input type="password" size="10" maxlength="5" autofocus>
+		<hr>
+		이름 : <input type="text" placeholder="이름입력">
+		우편번호  : <input type="text" size="6" readonly>
+		<input type="button" value="주소찾기">
+		
+		<hr>
+		성별 : <input type="radio" name="gender" value="m">남
+		       <input type="radio" name="gender" value ="f" checked>여
+
+		<hr>
+		취미 : <input type="checkbox" name="h1" value="song" checked>노래
+		       <input type="checkbox" name="h2" value="movie">영화
+			   <input type="checkbox" name="h3" value="cook">요리
+	
+		<hr>
+		<input type="submit">
+		<input type="reset">
+	
+		<hr>
+	
+		생년월일 : <select value ="myYear" id ="myYear"> 
+						<option value="2019">2019년
+						<option value="2018">2018년
+						<option value="2017" selected>2017년
+				   </select>
+		<hr>
+
+		배송 메시지 : 
+				<textarea row="5" cols="20"></textarea>
+
+		<hr>
+
+	</form>
+
+
+	<form action="ok2.jsp">
+			<input type="text" value="word">
+			<input type="image" src="../images/search.png">
+			<input type="hidden" name="page" value="3">
+	</form>
+
+	<form enctype="multipart/form-data">
+		첨부파일 : <input type="file">
+		<br>
+		<input type="submit" value="전송">
+
+	</form>
+
+
+ </body>
+</html>
