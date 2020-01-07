@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>03_기본메소드.html</title>
+ </head>
+ <body>
+  <script>
+    /* 기본적인 변환 메소드들 */
+    //숫자형 변환
+	/*
+	//1)The Number() Method
+    document.write(Number(true));   //1
+    document.write(Number(false));  //0
+    document.write(Number("10"));   //10
+    document.write(Number("  10")); //10
+    document.write(Number("10  ")); //10
+    document.write(Number(" 10  "));//10
+    document.write(Number("10.33"));//10.33
+    document.write(Number("10,33"));//NaN
+    document.write(Number("10 33"));//NaN
+    document.write(Number("John")); //NaN
+    document.write("<hr>");
+
+    //2)The parseInt() Method
+    document.write(parseInt("10"));       //10
+    document.write(parseInt("10.33"));    //10
+    document.write(parseInt("10 20 30")); //10
+    document.write(parseInt("10 years")); //10
+    document.write(parseInt("years 10")); //NaN 
+    document.write("<hr>");
+
+    //3)The parseFloat() Method
+    document.write(parseFloat("10"));     //10
+    document.write(parseFloat("10.33"));  //10.33
+    document.write(parseFloat("10 20 30"));//10
+    document.write(parseFloat("10 years"));//10
+    document.write(parseFloat("years 10"));//NaN
+    document.write("<hr>");
+	*/
+//-----------------------------------------------------
+	//isNaN()
+	//->숫자모양으로 된 기호로 구성된 값인지?
+    document.write(isNaN(123));          //false
+    document.write(isNaN(-1.23));        //false
+    document.write(isNaN(5-2));          //false
+    document.write(isNaN(0));            //false
+    document.write(isNaN('123'));        //false
+    document.write(isNaN('Hello'));      //true 
+    document.write(isNaN('2005/12/12')); //true
+    document.write(isNaN(''));           //false
+    document.write(isNaN(true));         //false
+    document.write(isNaN(undefined));    //true
+    document.write(isNaN('NaN'));        //true
+    document.write(isNaN(NaN));          //true
+    document.write(isNaN(0 / 0));        //true
+    //쓰레기값 : NaN, undefined
+//-----------------------------------------------
+    //eval()
+	//-> 문자열로 구성된 값을 실제 연산해서 반환
+    var x = 10;
+    var y = 20;
+    document.write(eval("x * y")); //200
+    document.write(eval("2 + 2")); //4
+    document.write(eval("x + 17"));//27
+
+  </script>
+ </body>
+</html>

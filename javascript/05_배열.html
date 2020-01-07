@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>05_배열.html</title>
+ </head>
+ <body>
+  <script>
+    //배열, index순서, element요소
+
+	//배열 선언
+    //var points = new Array();     // Bad
+    //var points = [];              // Good 
+
+    var points = [40, 100, 1, 5, 25, 10]; 
+    for(idx=0; idx<points.length; idx++){
+	  document.write(points[idx]);
+	  document.write("<hr>");
+    }//for end
+
+    document.write(points);
+	document.write("<hr>");
+
+    //오름차순 정렬
+    points.sort(function(a, b){return a - b});
+    document.write(points.toString());
+    document.write("<hr>");
+
+    //내림차순 정렬
+	points.sort(function(a, b){return b - a});
+    document.write(points.toString());
+    document.write("<hr>");
+
+    //배열선언
+    var cars=[];
+    cars[0]="Saab";
+    cars[1]="Volvo";
+    cars[2]="BMW";
+    document.write(cars); //배열요소전체
+    document.write("<hr>");
+
+    var fruits=["Banana","Orange","Apple","Mango"];
+    fruits[6]="Lemon";
+    document.write(fruits.length);//7
+    document.write(fruits[6]);    //"Lemon"
+    document.write(fruits[4]);    //undefined
+    document.write(fruits[5]);    //undefined
+
+  </script>
+ </body>
+</html>

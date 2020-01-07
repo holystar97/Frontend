@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>05_다양한selector.html</title>
+  <style>
+	div>p     {/*부모<div>, 자식<p>*/
+	           background:red;}
+	div>span>p{/*<div>안에서 부모<span>, 자식<p>*/
+               background:green;}
+
+    #menu{width:100px;
+	      height:100px;
+	      background:gray;}
+
+	.hide{width:0;
+	      height:0;
+	      margin:0;
+		  padding:0;
+		  font-size:0;}
+
+  </style>
+ </head>
+ <body>
+   <p>무궁화</p>
+   <div><p>개나리</p></div>
+   <div>
+        <span><p>진달래</p></span>
+   </div>
+   <hr>
+
+   <div id="menu">
+     <ol class="hide">
+	   <li>국어</li>
+	   <li>영어</li>
+	   <li>수학</li>
+	 </ol>
+   </div>
+   <hr>
+
+
+
+ </body>
+</html>

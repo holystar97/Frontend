@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>04_제어문.html</title>
+ </head>
+ <body>
+
+  <div id="demo"></div>
+
+  <script>
+    //조건문 : if문, switch~case문
+    //반복문 : for문, while문, do~while문
+    //break문, continue문
+
+	//성적프로그램
+    var uname="나옥돌";
+    var kor=100, eng=95, mat=100;
+    var total=kor+eng+mat;
+    var aver=parseInt(total/3);
+	
+    //문) 국어점수의 학점을 구하시오
+    var grade="";
+    if(kor>=90){
+	  grade="국어 : A학점";
+    }else if(kor>=80){
+	  grade="국어 : B학점";
+    }else if(kor>=70){
+	  grade="국어 : C학점";
+    }else if(kor>=60){
+	  grade="국어 : D학점";
+    }else {
+	  grade="국어 : F학점";
+    }//if end
+
+    //문)과락(평균을 기준으로 합격,재시험,불합격)
+    var result="";
+    if(aver>=70){
+        if(kor<40 || eng<40 || mat<40){
+		   result = "재시험";
+	    }else{
+		   result = "합격";
+	    }
+    }else{
+      result = "불합격";
+    }//if end
+
+    //문)평균 10점당 * 한개씩
+    var star="";
+    for(n=0; n<parseInt(aver/10); n++){
+	    star += "*";
+    }//for end
+
+    //문)평균 95이상 장학생
+    var special="";
+    if(aver>=95) {
+	  special="장학생";
+    }//if end
+
+    //문) 위의 데이터값을 문자열 변수에 모두 모아서
+    //    테이블로 작성한후 id=demo에 출력하시오
+    var table = "";
+    table += "<table border='1'>";
+    table += "<tr>";
+    table += "  <th>이름</th>";
+    table += "  <td>" + uname + "</td>";
+    table += "</tr>";
+    table += "<tr>";
+    table += "  <th>국어</th>";
+    table += "  <td>" + kor + "</td>";
+    table += "</tr>";
+    table += "<tr>";
+    table += "  <th>영어</th>";
+    table += "  <td>" + eng + "</td>";
+    table += "</tr>";
+    table += "<tr>";
+    table += "  <th>수학</th>";
+    table += "  <td>" + mat + "</td>";
+    table += "</tr>";
+    table += "<tr>";
+    table += "  <th>평균</th>";
+    table += "  <td>" + aver + "</td>";
+    table += "</tr>";
+    table += "<tr>";
+    table += "  <th rowspan='4'>결과</th>";
+    table += "  <td>" + grade + "</td>";
+    table += "</tr>";
+    table += "<tr>";
+    table += "  <td>" + result + "</td>";
+    table += "</tr>";
+    table += "<tr>";
+    table += "  <td>" + star + "</td>";
+    table += "</tr>";
+    table += "<tr>";
+    table += "  <td><span style='color:red'>" + special + "</span></td>";
+    table += "</tr>";
+    table += "</table>";
+
+    document.getElementById("demo").innerHTML=table;
+
+  </script>
+ </body>
+</html>

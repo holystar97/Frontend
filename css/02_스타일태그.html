@@ -2,9 +2,43 @@
 <html lang="ko">
  <head>
   <meta charset="UTF-8">
-  <title>blank.html</title>
+  <title>02_스타일태그.html</title>
+  <style>
+   /*
+     - 선택자{Property:Value; Property:Value; ~}
+ 	
+	 - 선택자(Selectors) 유형
+       1) .선택자이름 -> 적용할때 class="선택자이름"
+	   2) #아이디이름 -> 문서에서 id=""
+	   3) 태그        -> h1 p div body 등
+   */
+
+	.intro {background-color: red;}
+	#firstname {background-color:blue;}
+	h1 {background-color:green;
+		color:pink; }
+	input {border: 1px solid black;
+		   border-radius:2px;
+		   }
+
+  </style>
  </head>
- <body>
-  
+ <body class="intro">
+  <!-- 2) Internal style sheet
+          <style></style>         
+  -->
+
+	<div id="firstname">대한민국</div>
+	<span class="intro">오필승 코리아</span>
+	<!-- id는 되도록 중복하지 않는다
+	<span id="firstname">무궁화</span>
+	-->
+	<h1>서울특별시</h1>
+	<h2>부산광역시</h2>
+	<hr>
+	<input type="text">
+	<input type="text">
+	<input type="text">
+
  </body>
 </html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>06_함수.html</title>
+ </head>
+ <body>
+  <script>
+	/*
+		function, method, 함수
+		-함수의 리턴값은 
+	*/
+
+	function test(){
+		alert("안녕~~");
+	}
+
+	function abs(a) {
+		//매개변수의 자료형이 없다 
+		//절대값 구하기 
+		
+		if(a<0){
+			alert(-a);
+		}else{
+			alert(a);
+		}
+	}
+
+	function max(a,b,c) {
+		//큰값 구하기 
+		var m=(a<b) ? b:a;
+		m=(m<c)? c:m;
+		alert(m);
+	}
+
+
+  </script>
+ </body>
+</html>
