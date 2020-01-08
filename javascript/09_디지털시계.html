@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>09_디지털시계.html</title>
+  <style>
+  .time{background-color:#000000; /*검정색*/
+	    width:300px; height:25px;
+		color:#ffff00;            /*진한노랑색*/
+		font-weight:bold;
+		font-size:20px;
+		text-align:center;
+		border:1px solid black;}
+  </style>
+ </head> 
+ 
+ <script>
+ function showtime(){
+   //alert("디지털시계 시작");
+   //현재 날짜 및 시간을 id=clock에 출력하기
+
+   var today=new Date();
+   //alert(today);
+   var str="";
+   
+   str += today.getFullYear() + ".";
+
+   if(today.getMonth()+1<10){
+     str += "0"; //글자갯수를 2자리로 맞추기 위해
+   }
+   str += (today.getMonth()+1) + ".";
+
+   if(today.getDate()<10){
+		str += "0";                      
+   }//if end
+   str += today.getDate() + ".";
+  
+   switch(today.getDay()) {
+     case 0: str += " (일) "; break;
+     case 1: str += " (월) "; break;
+     case 2: str += " (화) "; break;
+     case 3: str += " (수) "; break;
+     case 4: str += " (목) "; break;
+	 case 5: str += " (금) "; break;
+	 case 6: str += " (토) "; break;
+   }//switch end
+
+    if(today.getHours()<12)  {
+		  str += "AM ";
+    } else {
+		  str += "PM ";
+    }//if end
+	
+	if(today.getHours()>=13)  { //시
+		  str += (today.getHours()-12)+":";
+	} else {
+		  str += today.getHours()+":";
+	}//if end
+
+	if(today.getMinutes()<10) { //분
+		  str += "0";
+	} 		
+	str += today.getMinutes()+":";
+
+	if(today.getSeconds()<10) { //초
+		  str += "0";
+	} 
+	str += today.getSeconds();
+
+    document.getElementById("clock").innerHTML=str; 
+
+    /*
+       함수 자동 호출
+	   - setInterval(함수이름, 1000)
+	     ->1초마다 함수호출
+
+	   - setTimeout(함수이름, 1000)
+	     ->1초후 1번만 호출
+		 ->function test(){
+             setTimeout(test, 1000)
+           }//setInterval()과 동일한 형태
+
+	   - clearInterval() : 시간해제
+	   - clearTimeout()  : 시간해제
+    */
+
+    //1초후에 showtime함수 호출
+    timer=setTimeout(showtime, 1000);
+ }//showtime() end
+
+ //전역변수 선언 지역
+ var timer;
+
+ function killtime(){
+     clearTimeout(timer); //시간해제
+ }//killtime() end
+ </script>
+ 
+ <body onload="showtime()" onunload="killtime()">
+
+  <!-- 2020.01.08 (수) AM11:55:07 -->
+  <div id="clock" class="time"></div>
+  <hr>
+  <input type="button" value="시계중지"
+		 onclick="killtime()">
+
+ </body>
+</html>

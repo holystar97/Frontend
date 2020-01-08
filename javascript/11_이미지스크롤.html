@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>11_이미지스크롤.html</title>
+  <style>
+  #myfilm{position:absolute;
+          left:100px;
+		  top:10px;
+		  width:270px;
+		  height:150px;
+		  background:white;
+		  overflow:hidden;}
+  </style>
+  <script>
+    //1) 스크롤하고자 하는 이미지를 전역변수에 대입
+	var ctnt=[]; //배열선언
+	ctnt[0]="<img src='../images/devil.png' width='85'>";
+	ctnt[1]="<img src='../images/angel.png' width='85'>";
+	ctnt[2]="<img src='../images/smile.png' width='85'>";
+	ctnt[3]="<img src='../images/kiss.png'  width='85'>";
+	ctnt[4]="<img src='../images/devil.png' width='85'>";
+	ctnt[5]="<img src='../images/angel.png' width='85'>";
+	ctnt[6]="<img src='../images/smile.png' width='85'>";
+	ctnt[7]="<img src='../images/kiss.png'  width='85'>";
+
+    //2) 1)번에서 준비한 이미지를 id=myfilm에 배치하기
+	function start(){
+	  /*
+      document.write("<div id='area0' style='left:0'>");
+      document.write(ctnt[0]);
+      document.write("</div>");
+      */
+      for(i=0; i<8; i++){
+        document.write("<div id='area" + i +"' style='position:absolute;left:" + (90*i) +"px'>");
+        document.write(ctnt[i]);
+        document.write("</div>");
+	  }//for end
+	  
+      //3) 3초후에 scroll함수를 호출
+	  setTimeout(scroll, 3000);
+
+	}//start() end
+
+    //4)이미지 스크롤
+	function scroll(){
+	  //alert("scroll함수 호출");
+	  //style 가져오기
+      //var tmp=document.getElementById("area0").style;
+	  //가져온 현재 style에서 왼쪽여백값 -10 줄이기
+	  //tmp.left=parseInt(tmp.left)-10 + "px";
+	  //alert(tmp.left);
+      
+	  //5) id=area0 ~id=area7까지 동시에 왼쪽 여백 줄임
+	  for(i=0; i<8; i++){
+        var tmp=document.getElementById("area"+i).style;
+ 	    tmp.left=parseInt(tmp.left)-10 + "px";
+
+        //7)이미지 순환
+		if(parseInt(tmp.left)<=-90) { //영역을 벗어나면
+           tmp.left=90*(8-1) + "px";
+		}//if end
+
+	  }//for end
+
+	  //6) 0.5초후 scroll함수 호출
+      setTimeout(scroll, 500);
+
+	}//scroll() end
+    
+  </script>
+ </head>
+ <body>
+  <!-- 이미지 스크롤 -->
+  <div id="myfilm">
+     <script>  start(); </script>
+  </div>
+ </body>
+</html>

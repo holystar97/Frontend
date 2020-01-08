@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>10_로또번호.html</title>
+  <script>
+	//문 ) 1~45중에서 서로 겹치지 않게 6개 발생시킨 후
+	// 오름차순으로 정렬해서 id=lotto에 출력하시오
+	
+	function lotto(){
+	 var lotto = new Array(6);
+       // 추첨된 로또번호의 갯수
+        var count = 0;
+      // 번호중복 방지용 변수
+        var mFlag = true;
+        // 6개의 로또번호를 얻을때까지 반복
+        while(count < 6)
+        {
+           var number;
+           // 랜덤번호 추출
+           number = parseInt(Math.random()*45)+1
+           // 중복확인
+           for(var i=0; i<count; i++)
+              if(lotto[i] == number) mFlag = false;
+           // 중복된 번호가 아니면 로또 번호배열에 추가
+           if(mFlag)
+           {
+                lotto[count] = number;
+                count++;
+           }
+           mFlag = true;
+       }
+	   for (i=0;i<count ; i++)
+	   {   document.write(lotto[i] +" ");
+	   }
+	
+	}
+  </script>
+ </head>
+ <body>
+	*로또번호*<br>
+	<div id="lotto"></div>
+	<hr>
+	<input type="button"
+			value="로또번호생성"
+			onclick="lotto()">
+</body>
+</html>
