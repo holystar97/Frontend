@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>02_회원가입.html</title>
+  <script src="../js/jquery-3.4.1.min.js"></script>
+ </head>
+ <body>
+  <h1>회원가입</h1>
+  <form name="memfrm" id="memfrm">
+    아이디:<input type="text" name="uid" id="uid">
+    <button id="idcheck">ID중복확인</button>
+    <button id="join">회원가입</button>
+
+  </form>
+
+  <script>
+  /*/
+     jQuery 이벤트와 함수
+	 - $("선택자").on("이벤트", function(){});
+	 - $("선택자").이벤트(function(){});
+	 - 예)
+	   $("#idcheck").on("click", function(){});
+	   $("#idcheck").click(function(){});
+  */
+  $("#idcheck").click(function(){
+    //alert();
+	//<body>본문에 있는 아이디 입력상자 접근
+	//1)JavaScript접근
+	//id=uid접근
+	//var uid=document.getElementById("uid").value;
+	
+	//<form name=memfrm>
+	//<input type=text name=uid>접근
+	//var uid=document.memfrm.uid.value;
+	//alert(uid);
+
+
+	//2)jQuery접근
+	//<input type=text id=uid>
+	//var uid=$("#uid").val();
+	//alert(uid);
+
+	//새창띄우기
+	//window.open("파일명","창이름","옵션");
+	window.open("blank.html"
+	           ,"idwin"
+			   ,"width=250, height=200");
+  
+  });//idcheck end
+
+  $("#join").click(function(){
+    //alert();
+	//아이디 유효성 검사
+	var uid=$("#uid").val();
+	uid=uid.trim();
+	if(uid.length<8 || uid.length>15){
+      alert("아이디 8~15내에서 입력바람!!");
+	  $("#uid").focus(); //커서생성
+	  return false;//<button>의 기본속성 submit
+	}//if end
+  
+    //서버로 전송
+	$("#memfrm").submit();
+
+  });//join end
+
+  </script>
+ </body>
+</html>
